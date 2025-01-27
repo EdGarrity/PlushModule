@@ -13,10 +13,27 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Plush">
+      <UniqueIdentifier>{60bd4f54-a33c-49fa-977d-40c61d13ec29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Plush">
+      <UniqueIdentifier>{340d8c6a-50d6-4989-b5bc-70331f3cca39}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PlushModule.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Plush\Atom.cpp">
+      <Filter>Source Files\Plush</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Plush\Atom.h">
+      <Filter>Header Files\Plush</Filter>
+    </ClInclude>
+    <ClInclude Include="Plush\Config.h">
+      <Filter>Header Files\Plush</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
