@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include <algorithm> 
+//#include <algorithm> 
 #include <cctype>
 #include <locale>
 #include <vector>

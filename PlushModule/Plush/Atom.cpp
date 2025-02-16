@@ -1,5 +1,6 @@
-#include <algorithm>
+#include <algorithm> // Add this include directive
 #include <string>
+#include <string_view>
 #include "Atom.h"
 #include "Config.h"
 #include "../Utilities/String.h"
@@ -73,14 +74,14 @@ namespace Plush
 
 	void Atom::compile(std::string_view _atom_string)
 	{
+		std::string lowercase_atom_string;
 		std::size_t index, start_of_optional_tokens, start_of_optional_value; // , end_of_optional_value;
 
 		// Convert to lower case
-		std::transform(_atom_string.begin(), _atom_string.end(), _atom_string.begin(),
-			[](unsigned char c) { return std::tolower(c); });
+		lowercase_atom_string = Utilities::to_lower_copy(std::string(_atom_string));
 
 		// Find token for the instruction
-		index = _atom_string.find(":instruction");
+		index = lowercase_atom_string.find(":instruction");
 
 		if (index == std::string::npos)
 			throw;
@@ -88,49 +89,45 @@ namespace Plush
 		// Find start of instruction atom
 		index += strlen(":instruction");
 
-		while (_atom_string[index] == ' ')
+		while (lowercase_atom_string[index] == ' ')
 			index++;
 
-		start_of_optional_tokens = _atom_string.find_first_of(" :}", index);
+		start_of_optional_tokens = lowercase_atom_string.find_first_of(" :}", index);
 
-		instruction_name = _atom_string.substr(index, start_of_optional_tokens - index);
-
-		// Convert instruction to upper case
-		std::transform(instruction_name.begin(), instruction_name.end(), instruction_name.begin(),
-			[](unsigned char c) { return std::toupper(c); });
+		instruction_name = Utilities::to_upper_copy(lowercase_atom_string.substr(index, start_of_optional_tokens - index));
 
 		// Check for optional close token
-		index = _atom_string.find(":close");
+		index = lowercase_atom_string.find(":close");
 
 		if (index != std::string::npos)
 		{
 			start_of_optional_value = index + strlen(":close");
 
-			while (_atom_string[start_of_optional_value] == ' ')
+			while (lowercase_atom_string[start_of_optional_value] == ' ')
 				start_of_optional_value++;
 
-			close_parenthesis = std::abs(std::stoi(std::string(_atom_string.substr(start_of_optional_value, index))));
+			close_parenthesis = std::abs(std::stoi(std::string(lowercase_atom_string.substr(start_of_optional_value, index))));
 
 			if (close_parenthesis > Config::maximum_stack_dept)
 				close_parenthesis = Config::maximum_stack_dept;
 		}
 
 		// Check for optional silent tiken
-		index = _atom_string.find(":silent", start_of_optional_tokens);
+		index = lowercase_atom_string.find(":silent", start_of_optional_tokens);
 
 		if (index != std::string::npos)
 		{
 			start_of_optional_value = index + strlen(":silent");
 
-			while (_atom_string[start_of_optional_value] == ' ')
+			while (lowercase_atom_string[start_of_optional_value] == ' ')
 				start_of_optional_value++;
 
-			if (_atom_string.find("true") != std::string::npos)
+			if (lowercase_atom_string.find("true") != std::string::npos)
 				type = AtomType::silent;
 		}
 
 		// Check for boolean
-		else if ((instruction_name == Plush::Atom::boolean_true) || (instruction_name == Plush::Atom::boolean_false))
+		else if ((instruction_name == Plush::boolean_true) || (instruction_name == Plush::boolean_false))
 			type = AtomType::boolean;
 
 		// Check for integer

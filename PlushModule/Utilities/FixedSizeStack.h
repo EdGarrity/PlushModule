@@ -1,5 +1,6 @@
 #pragma once
 #include <array>
+#include <stdexcept>
 
 // Purpose: 
 //   Impliments a fixed-sized stack (FIFO)
@@ -99,6 +100,6 @@ namespace Plush
 				std::swap(stack_, _other.stack_);
 				std::swap(top_, _other.top_);
 			}
-		}
+		};
 	};
 }

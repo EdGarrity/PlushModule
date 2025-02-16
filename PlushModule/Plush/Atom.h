@@ -25,9 +25,6 @@ namespace Plush
 			silent
 		};
 
-		static const std::string_view boolean_true;
-		static const std::string_view boolean_false;
-
 		//size_t instruction_id;
 		std::string instruction_name;
 		AtomType type;
@@ -72,5 +69,35 @@ namespace Plush
 		};
 
 		inline bool operator!=(const ExecAtom& other) { return !(operator==(other)); };
+	};
+
+	class CodeAtom : public Atom
+	{
+	private:
+
+	public:
+		explicit CodeAtom() : Atom() {};
+		explicit CodeAtom(std::string _program_statement) : Atom(_program_statement) {};
+		explicit CodeAtom(char _program_statement[]) : Atom(_program_statement) {};
+		explicit CodeAtom(const char* _program_statement) : Atom(_program_statement) {};
+		explicit CodeAtom(long value) : Atom(value) {};
+		explicit CodeAtom(double value) : Atom(value) {};
+		explicit CodeAtom(bool value) : Atom(value) {};
+		explicit CodeAtom(const Atom& other) : Atom(other) {};
+		explicit CodeAtom(Atom& other) : Atom(other) {};
+		explicit CodeAtom(const Atom* other) : Atom(other) {};
+		explicit CodeAtom(Atom* other) : Atom(other) {};
+		explicit CodeAtom(ExecAtom& other) : Atom(other.instruction_name, other.close_parenthesis, other.type) {};
+
+		~CodeAtom() {};
+
+		inline bool operator==(const CodeAtom& other)
+		{
+			return ((instruction_name == other.instruction_name)
+				&& (close_parenthesis == other.close_parenthesis)
+				&& (type == other.type));
+		};
+
+		inline bool operator!=(const CodeAtom& other) { return !(operator==(other)); };
 	};
 }

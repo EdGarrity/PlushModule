@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <string_view>
-#include "Utilities/FixedSizeStack.h"
+#include "../Utilities/FixedSizeStack.h"
 #include "Atom.h"
 #include "Config.h"
 

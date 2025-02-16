@@ -33,14 +33,14 @@
     <ClCompile Include="Plush\Atom.cpp">
       <Filter>Source Files\Plush</Filter>
     </ClCompile>
-    <ClCompile Include="Genome.cpp">
-      <Filter>Source Files\Plush</Filter>
-    </ClCompile>
     <ClCompile Include="Plush\Processor.h.cpp">
       <Filter>Source Files\Plush</Filter>
     </ClCompile>
     <ClCompile Include="Utilities\String.cpp">
       <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Plush\Genome.cpp">
+      <Filter>Source Files\Plush</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -19,7 +19,8 @@ namespace Plush
 	//
 	// Remarks:
 	//
-	std::string_view Genome::convert_genome_to_string()
+	template <class T, unsigned long N>
+	std::string_view Genome<T, N>::convert_genome_to_string()
 	{
 		return std::string_view();
 	}
@@ -41,7 +42,8 @@ namespace Plush
 	//
 	// Remarks:
 	//
-	void Genome::ingest_plush_genome(std::string_view _genome_str)
+	template <class T, unsigned long N>
+	void Genome<T, N>::ingest_plush_genome(std::string_view _genome_str)
 	{
 	}
 }
