@@ -19,6 +19,12 @@
     <Filter Include="Source Files\Plush">
       <UniqueIdentifier>{340d8c6a-50d6-4989-b5bc-70331f3cca39}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Utilieies">
+      <UniqueIdentifier>{2a1a0f72-64dd-4259-8f01-5c573b18e068}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities">
+      <UniqueIdentifier>{c4ef9444-d147-4842-bc89-5d31275537cd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PlushModule.cpp">
@@ -27,6 +33,15 @@
     <ClCompile Include="Plush\Atom.cpp">
       <Filter>Source Files\Plush</Filter>
     </ClCompile>
+    <ClCompile Include="Genome.cpp">
+      <Filter>Source Files\Plush</Filter>
+    </ClCompile>
+    <ClCompile Include="Plush\Processor.h.cpp">
+      <Filter>Source Files\Plush</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities\String.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Plush\Atom.h">
@@ -34,6 +49,21 @@
     </ClInclude>
     <ClInclude Include="Plush\Config.h">
       <Filter>Header Files\Plush</Filter>
+    </ClInclude>
+    <ClInclude Include="Plush\Environment.h">
+      <Filter>Header Files\Plush</Filter>
+    </ClInclude>
+    <ClInclude Include="Plush\Genome.h">
+      <Filter>Header Files\Plush</Filter>
+    </ClInclude>
+    <ClInclude Include="Plush\Processor.h">
+      <Filter>Header Files\Plush</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\FixedSizeStack.h">
+      <Filter>Header Files\Utilieies</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\String.h">
+      <Filter>Header Files\Utilieies</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

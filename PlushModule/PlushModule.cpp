@@ -1,4 +1,7 @@
 #include <iostream>
+#include "Plush/Environment.h"
+
+Environment env;
 
 int main(int argc, char** argv)
 {
