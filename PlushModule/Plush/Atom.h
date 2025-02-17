@@ -69,6 +69,14 @@ namespace Plush
 		};
 
 		inline bool operator!=(const ExecAtom& other) { return !(operator==(other)); };
+        inline bool operator==(const ExecAtom& other) const
+        {
+            return ((instruction_name == other.instruction_name)
+                && (close_parenthesis == other.close_parenthesis)
+                && (type == other.type));
+        }
+
+        inline bool operator!=(const ExecAtom& other) const { return !(operator==(other)); }
 	};
 
 	class CodeAtom : public Atom
@@ -99,5 +107,14 @@ namespace Plush
 		};
 
 		inline bool operator!=(const CodeAtom& other) { return !(operator==(other)); };
+
+		inline bool operator==(const CodeAtom& other) const
+		{
+			return ((instruction_name == other.instruction_name)
+				&& (close_parenthesis == other.close_parenthesis)
+				&& (type == other.type));
+		}
+
+		inline bool operator!=(const CodeAtom& other) const { return !(operator==(other)); }
 	};
 }
