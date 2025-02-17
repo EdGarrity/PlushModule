@@ -20,17 +20,17 @@
 namespace Plush
 {
 	template <class T, unsigned long N = Config::maximum_stack_size>
-	class Genome
+	class Genome : public Utilities::FixedSizeStack<T, N>
 	{
 	private:
 		// The genome stack
-		Utilities::FixedSizeStack<T, N> genome_stack_;
+		//Utilities::FixedSizeStack<T, N> genome_stack_;
 
 		// Human readable version of the Plush genome
 		std::string genome_string_;
 
 		// Convert genome to a Human readable string
-		std::string_view convert_genome_to_string();
+		std::string convert_genome_to_string();
 
 		// Ingest genome string
 		void ingest_plush_genome(std::string_view _genome_str);
@@ -41,7 +41,17 @@ namespace Plush
 
 		// Destructor
 		~Genome() = default;
-		
+
+		typedef typename std::array<T, N>::value_type value_type;
+		typedef typename std::array<T, N>::reference reference;
+		typedef typename std::array<T, N>::const_reference const_reference;
+		typedef typename std::array<T, N>::size_type size_type;
+
+		//inline reference get_atom_at_index(size_t index)
+		//{
+		//	return genome_stack_.get_atom_at_index(index);
+		//}
+
 		//// Push an item onto the genome stack
 		//void push(const T& _value);
 		//

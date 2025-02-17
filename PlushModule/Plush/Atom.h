@@ -48,9 +48,9 @@ namespace Plush
 
 	public:
 		explicit ExecAtom() : Atom() {};
-		explicit ExecAtom(std::string _program_statement) : Atom(_program_statement) {};
-		explicit ExecAtom(char _program_statement[]) : Atom(_program_statement) {};
-		explicit ExecAtom(const char* _program_statement) : Atom(_program_statement) {};
+		explicit ExecAtom(std::string_view _program_statement) : Atom(_program_statement) {};
+		//explicit ExecAtom(char _program_statement[]) : Atom(_program_statement) {};
+		//explicit ExecAtom(const char* _program_statement) : Atom(_program_statement) {};
 		explicit ExecAtom(long value) : Atom(value) {};
 		explicit ExecAtom(double value) : Atom(value) {};
 		explicit ExecAtom(bool value) : Atom(value) {};
@@ -77,9 +77,9 @@ namespace Plush
 
 	public:
 		explicit CodeAtom() : Atom() {};
-		explicit CodeAtom(std::string _program_statement) : Atom(_program_statement) {};
-		explicit CodeAtom(char _program_statement[]) : Atom(_program_statement) {};
-		explicit CodeAtom(const char* _program_statement) : Atom(_program_statement) {};
+		explicit CodeAtom(std::string_view _program_statement) : Atom(_program_statement) {};
+		//explicit CodeAtom(char _program_statement[]) : Atom(_program_statement) {};
+		//explicit CodeAtom(const char* _program_statement) : Atom(_program_statement) {};
 		explicit CodeAtom(long value) : Atom(value) {};
 		explicit CodeAtom(double value) : Atom(value) {};
 		explicit CodeAtom(bool value) : Atom(value) {};

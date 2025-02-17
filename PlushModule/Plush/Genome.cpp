@@ -20,9 +20,9 @@ namespace Plush
 	// Remarks:
 	//
 	template <class T, unsigned long N>
-	std::string_view Genome<T, N>::convert_genome_to_string()
+	std::string Genome<T, N>::convert_genome_to_string()
 	{
-		return std::string_view();
+		return std::string();
 	}
 
 	// Purpose: 
