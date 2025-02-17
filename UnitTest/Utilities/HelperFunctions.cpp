@@ -10,10 +10,9 @@ namespace PlushUnitTest
 
 		if (!s2.empty())
 		{
-			Genome<S1> S1_Stack = env.get_stack<S1>();
 			for (size_t n = 0; n < s2.size(); n++)
 			{
-				if (s2[n] != S1_Stack.get_atom_at_index(n))
+				if (s2[n] != env.get_stack<S1>().get_atom_at_index(n))
 					return false;
 			}
 		}
@@ -26,14 +25,14 @@ namespace PlushUnitTest
 		const std::vector<long>& int_array,
 		const std::vector<double>& double_array,
 		const std::vector<bool>& bool_array,
-		const std::vector<ExecAtom>& exec_array,
-		const std::vector<CodeAtom>& code_array)
+		const std::vector<Plush::ExecAtom>& exec_array,
+		const std::vector<Plush::CodeAtom>& code_array)
 	{
 		if (match<long>(env, int_array)
 			&& match<double>(env, double_array)
 			&& match<bool>(env, bool_array)
-			&& match<ExecAtom>(env, exec_array)
-			&& match<CodeAtom>(env, code_array)
+			&& match<Plush::ExecAtom>(env, exec_array)
+			&& match<Plush::CodeAtom>(env, code_array)
 			)
 			return true;
 

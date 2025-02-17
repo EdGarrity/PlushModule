@@ -91,7 +91,7 @@ namespace Plush
 		explicit CodeAtom(long value) : Atom(value) {};
 		explicit CodeAtom(double value) : Atom(value) {};
 		explicit CodeAtom(bool value) : Atom(value) {};
-		explicit CodeAtom(const Atom& other) : Atom(other) {};
+		explicit CodeAtom(const CodeAtom& other) : Atom(other) {};
 		explicit CodeAtom(Atom& other) : Atom(other) {};
 		explicit CodeAtom(const Atom* other) : Atom(other) {};
 		explicit CodeAtom(Atom* other) : Atom(other) {};
