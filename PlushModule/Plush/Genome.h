@@ -1,9 +1,10 @@
 #pragma once
 #include <string>
 #include <string_view>
+#include "Plush.StaticInit.h"
 #include "../Utilities/FixedSizeStack.h"
-#include "Atom.h"
 #include "Config.h"
+#include "Atom.h"
 
 // Favor blocks over atoms algorithm:
 // - An atoms is considered a single littoral or instruction.

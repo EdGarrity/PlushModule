@@ -15,25 +15,25 @@ namespace PlushUnitTest
 		}
 	};
 
-	//TEST_CLASS(BooleanInstructions)
-	//{
-	//public:
-	//	TEST_METHOD(EQUALS_No_Parameters)
-	//	{
-	//		Environment env;
-	//		Assert::IsTrue(is_stack_state(env, {}, {}, {}, {}, {}));
+	TEST_CLASS(BooleanInstructions)
+	{
+	public:
+		TEST_METHOD(EQUALS_No_Parameters)
+		{
+			Environment env;
+			Assert::IsTrue(is_stack_state(env, {}, {}, {}, {}, {}));
 
-	//		env.enable_function("BOOLEAN.=");
+			env.enable_function("BOOLEAN.=");
 
-	//		Plush::run(env, \
-	//			"\
-	//				{:instruction BOOLEAN.= :close 0}\
-	//			");
+			Plush::run(env, \
+				"\
+					{:instruction BOOLEAN.= :close 0}\
+				");
 
-	//		Assert::IsTrue(is_stack_state(env, {}, {}, {}, {},
-	//			{
-	//				CodeAtom("{:instruction BOOLEAN.= :close 0}")
-	//			}));
-	//	}
-	//};
+			Assert::IsTrue(is_stack_state(env, {}, {}, {}, {},
+				{
+					CodeAtom("{:instruction BOOLEAN.= :close 0}")
+				}));
+		}
+	};
 }
