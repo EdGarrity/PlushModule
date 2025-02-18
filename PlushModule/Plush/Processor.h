@@ -31,6 +31,7 @@ namespace Plush
 {
 	typedef unsigned(*Operator)(Environment&); // Move to Instruction.h
 
+	unsigned int run(Environment& env, std::string program);
 	unsigned int run(Environment& env, std::string _program, std::vector<double>& _input, bool trace);
 	//unsigned int run(Environment& env, std::string _program, size_t case_index, bool trace);
 	unsigned int run(Environment& env, std::string _program, bool trace);

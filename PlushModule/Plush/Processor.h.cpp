@@ -13,6 +13,12 @@ namespace Plush
 	extern std::vector<double> null_input;
 
 	// Run provided program without inputs
+	unsigned int run(Environment& env, std::string program)
+	{
+		return run(env, program, null_input, false);
+	}
+
+	// Run provided program without inputs
 	unsigned int run(Environment& env, std::string program, bool trace)
 	{
 		return run(env, program, null_input, trace);
