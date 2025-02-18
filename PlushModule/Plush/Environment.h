@@ -71,16 +71,16 @@ namespace Plush
 		unsigned long individual_index = 0;
 		size_t example_case = 0;
 
-		inline void set_current_thread(int new_current_thread)
-		{
-			current_thread = new_current_thread;
+		//inline void set_current_thread(int new_current_thread)
+		//{
+		//	current_thread = new_current_thread;
 
-			exec_stack_.set_current_thread(new_current_thread);
-			int_stack_.set_current_thread(new_current_thread);
-			code_stack_.set_current_thread(new_current_thread);
-			bool_stack_.set_current_thread(new_current_thread);
-			double_stack_.set_current_thread(new_current_thread);
-		};
+		//	exec_stack_.set_current_thread(new_current_thread);
+		//	int_stack_.set_current_thread(new_current_thread);
+		//	code_stack_.set_current_thread(new_current_thread);
+		//	bool_stack_.set_current_thread(new_current_thread);
+		//	double_stack_.set_current_thread(new_current_thread);
+		//};
 
 		//inline void set_current_individual_index(int new_individual_index, size_t new_example_case)
 		//{
@@ -119,57 +119,57 @@ namespace Plush
 		}
 
 		/* Debug functions */
-		inline std::string print_state()
-		{
-			size_t output_stack_count = 0;
-			double output_stack_top_value = 0.0;
+		//inline std::string print_state()
+		//{
+		//	size_t output_stack_count = 0;
+		//	double output_stack_top_value = 0.0;
 
-			if (output.size() > 0)
-			{
-				output_stack_count = output.size();
-				output_stack_top_value = output[0];
-			}
+		//	if (output.size() > 0)
+		//	{
+		//		output_stack_count = output.size();
+		//		output_stack_top_value = output[0];
+		//	}
 
-			size_t int_stack_count = length<long>();
-			long int_stack_top_value = 0;
+		//	size_t int_stack_count = length<long>();
+		//	long int_stack_top_value = 0;
 
-			if (has_elements<long>(1))
-				int_stack_top_value = get_atom_at_position<long>(0);
+		//	if (has_elements<long>(1))
+		//		int_stack_top_value = get_atom_at_position<long>(0);
 
-			size_t double_stack_count = length<long>();
-			double double_stack_top_value = 0.0;
+		//	size_t double_stack_count = length<long>();
+		//	double double_stack_top_value = 0.0;
 
-			if (has_elements<double>(1))
-				double_stack_top_value = get_atom_at_position<double>(0);
+		//	if (has_elements<double>(1))
+		//		double_stack_top_value = get_atom_at_position<double>(0);
 
-			size_t bool_stack_count = length<bool>();
-			bool bool_stack_top_value = false;
+		//	size_t bool_stack_count = length<bool>();
+		//	bool bool_stack_top_value = false;
 
-			if (has_elements<bool>(1))
-				bool_stack_top_value = get_atom_at_position<bool>(0);
-
-
-			std::string debug_msg;
-
-			debug_msg = ",current_instruction=" + current_instruction;
-			debug_msg += ",effort=" + std::to_string(current_effort);
-			debug_msg += ",unit=" + std::to_string(current_unit);
+		//	if (has_elements<bool>(1))
+		//		bool_stack_top_value = get_atom_at_position<bool>(0);
 
 
-			debug_msg += ",exec_stack_size=" + std::to_string(exec_stack_.size());
-			debug_msg += ",code_stack_size=" + std::to_string(code_stack_.size());
-			debug_msg += ",int_stack_count=" + std::to_string(int_stack_count);
-			debug_msg += ",int_stack_top_value=" + std::to_string(int_stack_top_value);
-			debug_msg += ",double_stack_count=" + std::to_string(double_stack_count);
-			debug_msg += ",double_stack_top_value=" + std::to_string(double_stack_top_value);
-			debug_msg += ",bool_stack_count=" + std::to_string(bool_stack_count);
-			debug_msg += ",bool_stack_top_value=" + std::to_string(bool_stack_top_value);
+		//	std::string debug_msg;
 
-			debug_msg += ",output_stack_count=" + std::to_string(output_stack_count);
-			debug_msg += ",output_stack_top_value=" + std::to_string(output_stack_top_value);
+		//	debug_msg = ",current_instruction=" + current_instruction;
+		//	debug_msg += ",effort=" + std::to_string(current_effort);
+		//	debug_msg += ",unit=" + std::to_string(current_unit);
 
-			return debug_msg;
-		}
+
+		//	debug_msg += ",exec_stack_size=" + std::to_string(exec_stack_.size());
+		//	debug_msg += ",code_stack_size=" + std::to_string(code_stack_.size());
+		//	debug_msg += ",int_stack_count=" + std::to_string(int_stack_count);
+		//	debug_msg += ",int_stack_top_value=" + std::to_string(int_stack_top_value);
+		//	debug_msg += ",double_stack_count=" + std::to_string(double_stack_count);
+		//	debug_msg += ",double_stack_top_value=" + std::to_string(double_stack_top_value);
+		//	debug_msg += ",bool_stack_count=" + std::to_string(bool_stack_count);
+		//	debug_msg += ",bool_stack_top_value=" + std::to_string(bool_stack_top_value);
+
+		//	debug_msg += ",output_stack_count=" + std::to_string(output_stack_count);
+		//	debug_msg += ",output_stack_top_value=" + std::to_string(output_stack_top_value);
+
+		//	return debug_msg;
+		//}
 
 		/* Helper Functions */
 
@@ -446,32 +446,32 @@ namespace Plush
 		//}
 
 		/* Needed for type checking of preconditions */
-		//inline bool check_stack_size_at_least(unsigned long which, unsigned long size_needed) //const
-		//{
-		//	switch (which)
-		//	{
-		//	case EXEC_STACK: return assert_length<ExecAtom>(size_needed);
-		//	case INTEGER_STACK: return int_stack_.size() >= size_needed;
-		//	case CODE_STACK: return assert_length<CodeAtom>(size_needed);
-		//	case BOOL_STACK: return bool_stack_.size() >= size_needed;
-		//	case FLOAT_STACK: return double_stack_.size() >= size_needed;
-		//	}
-		//	return false;
-		//}
+		inline bool check_stack_size_at_least(unsigned long which, unsigned long size_needed) //const
+		{
+			switch (which)
+			{
+			case EXEC_STACK: return assert_length<ExecAtom>(size_needed);
+			case INTEGER_STACK: return int_stack_.size() >= size_needed;
+			case CODE_STACK: return assert_length<CodeAtom>(size_needed);
+			case BOOL_STACK: return bool_stack_.size() >= size_needed;
+			case FLOAT_STACK: return double_stack_.size() >= size_needed;
+			}
+			return false;
+		}
 
 		/* Needed for type checking of post conditions */
-		//inline unsigned long get_stack_free(unsigned long which) //const
-		//{
-		//	switch (which)
-		//	{
-		//	case EXEC_STACK: return exec_stack_.free();
-		//	case INTEGER_STACK: return int_stack_.free();
-		//	case CODE_STACK: return code_stack_.free();
-		//	case BOOL_STACK: return bool_stack_.free();
-		//	case FLOAT_STACK: return double_stack_.free();
-		//	}
-		//	return 0;
-		//}
+		inline unsigned long get_stack_free(unsigned long which) //const
+		{
+			switch (which)
+			{
+			case EXEC_STACK: return exec_stack_.free();
+			case INTEGER_STACK: return int_stack_.free();
+			case CODE_STACK: return code_stack_.free();
+			case BOOL_STACK: return bool_stack_.free();
+			case FLOAT_STACK: return double_stack_.free();
+			}
+			return 0;
+		}
 
 		template <typename T>
 		inline unsigned long position_to_index(unsigned long position)

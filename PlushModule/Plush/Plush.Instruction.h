@@ -18,10 +18,10 @@ namespace Plush
 	public:
 		Instruction(Operator op, std::string name, Type intype, Type outtype) : op_(op), name_(name), intype_(intype), outtype_(outtype) {}
 
-		//virtual bool can_run(/*const*/ Environment& env) /*const*/ 
-		//{ 
-		//	return intype_.can_pop_from(env) && outtype_.can_push_to(env);
-		//}
+		virtual bool can_run(/*const*/ Environment& env) /*const*/ 
+		{ 
+			return intype_.can_pop_from(env) && outtype_.can_push_to(env);
+		}
 
 		std::string to_string() const { return name_; }
 		Operator get_op() const { return op_; }

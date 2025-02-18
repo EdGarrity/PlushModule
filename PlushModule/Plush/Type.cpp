@@ -22,35 +22,35 @@ namespace Plush
 		return org;
 	}
 
-	//bool Type::can_pop_from(/*const*/ Environment & env) // const
-	//{
-	//	for (unsigned int i = _start; i < type.size(); ++i)
-	//	{
-	//		if (type[i] > 0)
-	//		{
-	//			if (env.check_stack_size_at_least(i, type[i]) == false)
-	//				return false;
-	//		}
-	//	}
+	bool Type::can_pop_from(/*const*/ Environment & env) // const
+	{
+		for (unsigned int i = _start; i < type.size(); ++i)
+		{
+			if (type[i] > 0)
+			{
+				if (env.check_stack_size_at_least(i, type[i]) == false)
+					return false;
+			}
+		}
 
-	//	return true;
-	//}
+		return true;
+	}
 
-	//bool Type::can_push_to(/*const*/ Environment & env) // const
-	//{
-	//	for (unsigned int i = _start; i < type.size(); ++i)
-	//	{
-	//		if (type[i] > 0)
-	//		{
-	//			size_t f = env.get_stack_free(i);
+	bool Type::can_push_to(/*const*/ Environment & env) // const
+	{
+		for (unsigned int i = _start; i < type.size(); ++i)
+		{
+			if (type[i] > 0)
+			{
+				size_t f = env.get_stack_free(i);
 
-	//			if (f < type[i])
-	//				return false;
-	//		}
-	//	}
+				if (f < type[i])
+					return false;
+			}
+		}
 
-	//	return true;
-	//}
+		return true;
+	}
 
 	bool Type::operator==(/*const*/ Type & other) // const
 	{

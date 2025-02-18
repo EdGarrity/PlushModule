@@ -1,6 +1,5 @@
 #include <algorithm> // Add this include directive
 #include <string>
-#include <string_view>
 #include "Atom.h"
 #include "Config.h"
 #include "../Utilities/String.h"
@@ -8,8 +7,8 @@
 namespace Plush
 {
 	// Definitions of static members
-	static const std::string_view boolean_true = "TRUE";
-	static const std::string_view boolean_false = "FALSE";
+	const char Atom::boolean_true[] = "TRUE";
+	const char Atom::boolean_false[] = "FALSE";
 
 	Atom::Atom()
 	{
@@ -127,7 +126,7 @@ namespace Plush
 		}
 
 		// Check for boolean
-		else if ((instruction_name == Plush::boolean_true) || (instruction_name == Plush::boolean_false))
+		else if ((instruction_name == boolean_true) || (instruction_name == boolean_false))
 			type = AtomType::boolean;
 
 		// Check for integer
@@ -144,4 +143,59 @@ namespace Plush
 		//instruction_id = Plush::static_initializer.get_function_index(instruction_name);
 	}
 
+	// Purpose: 
+	//   Returns first atom in genome
+	//
+	// Parameters:
+	//   None
+	// 
+	// Return value:
+	//   The genome's first atom as a sting
+	//
+	// Side Effects:
+	//   None
+	//
+	// Thread Safe:
+	//   Yes
+	//
+	// Remarks:
+	//
+	std::string first_atom(std::string _genome_instructions)
+	{
+		size_t found = _genome_instructions.find_first_of("}");
+
+		if (found == std::string::npos)
+			return "";
+
+		else
+			return _genome_instructions.substr(0, found + 1);
+	}
+
+	// Purpose: 
+	//   Returns rest of genome atoms after first atom
+	//
+	// Parameters:
+	//   None
+	// 
+	// Return value:
+	//   The remining genome atoms after the first atom as a sting
+	//
+	// Side Effects:
+	//   None
+	//
+	// Thread Safe:
+	//   Yes
+	//
+	// Remarks:
+	//
+	std::string rest_atom(std::string _genome_instructions)
+	{
+		size_t found = _genome_instructions.find_first_of("}");
+
+		if (found == std::string::npos)
+			return "";
+
+		else
+			return _genome_instructions.substr(found + 1);
+	}
 }

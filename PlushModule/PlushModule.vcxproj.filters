@@ -51,6 +51,9 @@
     <ClCompile Include="Plush\Plush.StaticInit.cpp">
       <Filter>Source Files\Plush</Filter>
     </ClCompile>
+    <ClCompile Include="Plush\Environment.cpp">
+      <Filter>Source Files\Plush</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Plush\Atom.h">

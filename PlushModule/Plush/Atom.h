@@ -25,6 +25,9 @@ namespace Plush
 			silent
 		};
 
+		static const char boolean_true[]; // = "TRUE"; C2864
+		static const char boolean_false[]; // = "FALSE"; C2864
+
 		//size_t instruction_id;
 		std::string instruction_name;
 		AtomType type;
@@ -117,4 +120,10 @@ namespace Plush
 
 		inline bool operator!=(const CodeAtom& other) const { return !(operator==(other)); }
 	};
+
+	// Returns first atom in genome instruction
+	std::string first_atom(std::string instruction);
+
+	// Returns rest of genome instruction after first instruction
+	std::string rest_atom(std::string instruction);
 }
