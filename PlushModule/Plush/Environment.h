@@ -20,7 +20,7 @@ namespace Plush
 	//	typedef std::map<std::string, Instruction*> Func2CodeMapType;
 	//	Func2CodeMapType Func2CodeMap;
 
-	//public:
+	public:
 	//	// Temp array of genes.  Used to reverse order of program prior to pushing program onto code stack.
 	//	std::array<std::string, Config::maximum_stack_size> temp_genes;
 
@@ -32,8 +32,8 @@ namespace Plush
 	//		Running
 	//	}; //running_state;
 
-	//	Environment()
-	//	{
+		Environment()
+		{
 	//		//{
 	//		//	std::ostringstream ss;
 	//		//	ss << ",method=Plush_Environment"
@@ -57,7 +57,7 @@ namespace Plush
 	//			enable_function("EXEC.ENABLE*INSTRUCTION");
 	//			enable_function("EXEC.ENABLE*INSTRUCTIONS");
 	//		}
-	//	}
+		}
 
 	//	// Pointer to input & output data
 	//	size_t record_index;
@@ -173,11 +173,11 @@ namespace Plush
 
 	//	/* Helper Functions */
 
-	//	void enable_function(std::string function_name)
-	//	{
-	//		//Instruction* pInstruction = static_initializer.get_function(function_name);
-	//		//Func2CodeMap[function_name] = pInstruction;
-	//	}
+		void enable_function(std::string function_name)
+		{
+			//Instruction* pInstruction = static_initializer.get_function(function_name);
+			//Func2CodeMap[function_name] = pInstruction;
+		}
 
 	//	void disable_function(std::string function_name)
 	//	{
@@ -185,11 +185,11 @@ namespace Plush
 	//			Func2CodeMap.erase(function_name);
 	//	}
 
-	//	void enable_function(unsigned long function_index)
-	//	{
+		void enable_function(unsigned long function_index)
+		{
 	//		Instruction* pInstruction = static_initializer.get_function(function_index);
 	//		Func2CodeMap[pInstruction->to_string()] = pInstruction;
-	//	}
+		}
 
 	//	void disable_function(int function_index)
 	//	{

@@ -8,7 +8,7 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-//Plush::Environment env;
+Plush::Environment env;
 
 namespace PlushUnitTest
 {
@@ -42,6 +42,12 @@ namespace PlushUnitTest
 			//	{
 			//		CodeAtom("{:instruction BOOLEAN.= :close 0}")
 			//	}));
+
+
+
+			Assert::IsTrue(is_stack_state(env, {}));
+
+			env.enable_function("BOOLEAN.=");
 		}
 	};
 }
