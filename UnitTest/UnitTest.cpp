@@ -1,22 +1,17 @@
-#include "pch.h"
+//#include "pch.h"
 #include "CppUnitTest.h"
 #include "..\UnitTest\Utilities\HelperFunctions.h"
 #include "..\PlushModule\Plush\Environment.h"
 #include "..\PlushModule\Plush\Processor.h"
-#include "..\PlushModule\Plush\Plush.StaticInit.h"
+//#include "..\PlushModule\Plush\Plush.StaticInit.h"
+#include "..\PlushModule\Plush\Atom.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace Plush
-{
-	thread_local StaticInit static_initializer;
-}
+//Plush::Environment env;
 
 namespace PlushUnitTest
 {
-	//Plush::Environment env;
-
-
 	TEST_CLASS(PlushUnitTest)
 	{
 	public:
@@ -33,7 +28,7 @@ namespace PlushUnitTest
 
 		TEST_METHOD(EQUALS_No_Parameters)
 		{
-			Plush::Environment env;
+			//Plush::Environment env;
 			//Assert::IsTrue(is_stack_state(env, {}, {}, {}, {}, {}));
 
 			//env.enable_function("BOOLEAN.=");

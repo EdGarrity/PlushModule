@@ -145,6 +145,12 @@ namespace Utilities
 			top_ = new_top;
 		}
 
+		// Constructor
+		FixedSizeStack() : stack_(), top_(0), current_thread(999) {}
+
+		// Destructor
+		~FixedSizeStack() = default;
+
 		// Purpose: 
 		//   Returns a reference to the underlying container
 		//
