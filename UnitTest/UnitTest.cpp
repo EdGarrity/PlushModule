@@ -1,13 +1,11 @@
 //#include "pch.h"
 #include "CppUnitTest.h"
 #include "..\UnitTest\Utilities\HelperFunctions.h"
-#include "..\PlushModule\Plush\Environment.h"
-#include "..\PlushModule\Plush\Processor.h"
-//#include "..\PlushModule\Plush\Plush.StaticInit.h"
-#include "..\PlushModule\Plush\Atom.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
+
+Plush::Processor processor;
 Plush::Environment env;
 
 namespace PlushUnitTest
@@ -48,6 +46,8 @@ namespace PlushUnitTest
 			Assert::IsTrue(is_stack_state(env, {}));
 
 			env.enable_function("BOOLEAN.=");
+
+			processor.run();
 		}
 	};
 }

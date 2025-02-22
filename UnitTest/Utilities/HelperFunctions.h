@@ -1,8 +1,11 @@
 #pragma once
 #include <vector>
 #include "..\..\PlushModule\Plush\Processor.h"
+#include "../../PlushModule/Plush/Environment.h"
 
 using namespace Plush;
+
+extern Environment env;
 
 namespace PlushUnitTest
 {

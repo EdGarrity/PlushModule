@@ -12,7 +12,7 @@ namespace Plush
 	//typedef unsigned(*Operator)(Environment& env);
 	//extern std::vector<double> null_input;
 
-	//// Run provided program without inputs
+	// Run provided program without inputs
 	//unsigned int run(Environment& env, std::string program)
 	//{
 	//	return run(env, program, null_input, false);
