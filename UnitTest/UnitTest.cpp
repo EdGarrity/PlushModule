@@ -47,7 +47,12 @@ namespace PlushUnitTest
 
 			env.enable_function("BOOLEAN.=");
 
-			processor.run();
+			processor.run(env, "{:instruction BOOLEAN.= :close 0}");
+
+			Assert::IsTrue(is_stack_state(env, {}, {}, {}, {},
+				{
+					CodeAtom("{:instruction BOOLEAN.= :close 0}")
+				}));
 		}
 	};
 }

@@ -2,6 +2,7 @@
 #include <string_view>
 #include <map>
 #include <utility>
+#include "Environment.h"
 
 namespace Plush
 {
@@ -13,6 +14,7 @@ namespace Plush
 		}
 
 		unsigned int run();
+		unsigned int run(Environment& env, std::string program);
 	};
 }
 
