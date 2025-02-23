@@ -14,8 +14,10 @@ namespace Plush
 		{
 		}
 
-		unsigned int run();
+		//typedef unsigned(*Operator)(Environment&); // Move to Instruction.h
+
 		unsigned int run(Environment& env, std::string program);
+		unsigned int run(Environment& env, std::string _program, std::vector<double>& _input, bool trace);
 	};
 }
 

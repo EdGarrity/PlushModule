@@ -20,6 +20,32 @@ namespace Plush
 		{
 		}
 
+		// Pointer to input & output data
+		size_t record_index;
+		std::vector<double> output;
+
+		std::array<std::string, Config::maximum_stack_size> temp_genes;
+
+		virtual void clear_stacks()
+		{
+			exec_stack_.clear();
+			int_stack_.clear();
+			code_stack_.clear();
+			bool_stack_.clear();
+			double_stack_.clear();
+
+			//null_input.clear();
+			record_index = 0;
+			output.clear();
+		}
+
+		virtual void initialize(std::vector<double>& _input)
+		{
+			clear_stacks();
+			record_index = 0;
+			output.clear();
+		}
+
 		void enable_function(std::string function_name)
 		{
 		}
