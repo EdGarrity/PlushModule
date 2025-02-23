@@ -132,12 +132,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="PlushModule.cpp" />
+    <ClCompile Include="Plush\Atom.cpp" />
     <ClCompile Include="Plush\Environment.cpp" />
+    <ClCompile Include="Plush\Genome.cpp" />
     <ClCompile Include="Plush\Processor.cpp" />
     <ClCompile Include="Utilities\String.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Plush\Atom.h" />
+    <ClInclude Include="Plush\Config.h" />
     <ClInclude Include="Plush\Environment.h" />
+    <ClInclude Include="Plush\Genome.h" />
     <ClInclude Include="Plush\Processor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

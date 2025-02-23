@@ -102,7 +102,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <AdditionalLibraryDirectories>D:\Users\egarrity\Source\Repos\EdGarrity\PlushModule\PlushModule\x64\Debug;C:\Users\edgar\source\repos\PlushModule\PlushModule\x64\Debug;$(VCInstallDir)UnitTest\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Processor.obj;Environment.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Atom.obj;Environment.obj;Processor.obj;String.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

@@ -3,6 +3,7 @@
 #include <map>
 #include <utility>
 #include "Environment.h"
+#include "Atom.h"
 
 namespace Plush
 {

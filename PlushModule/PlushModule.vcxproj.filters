@@ -39,12 +39,27 @@
     <ClCompile Include="PlushModule.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Plush\Atom.cpp">
+      <Filter>Source Files\Plush</Filter>
+    </ClCompile>
+    <ClCompile Include="Plush\Genome.cpp">
+      <Filter>Source Files\Plush</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Plush\Environment.h">
       <Filter>Header Files\Plush</Filter>
     </ClInclude>
     <ClInclude Include="Plush\Processor.h">
+      <Filter>Header Files\Plush</Filter>
+    </ClInclude>
+    <ClInclude Include="Plush\Atom.h">
+      <Filter>Header Files\Plush</Filter>
+    </ClInclude>
+    <ClInclude Include="Plush\Config.h">
+      <Filter>Header Files\Plush</Filter>
+    </ClInclude>
+    <ClInclude Include="Plush\Genome.h">
       <Filter>Header Files\Plush</Filter>
     </ClInclude>
   </ItemGroup>
