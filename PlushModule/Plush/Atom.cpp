@@ -37,7 +37,21 @@ namespace Plush
 		instruction_name = std::to_string(value);
 		close_parenthesis = 0;
 		type = AtomType::integer;
-	};
+	}
+
+	Atom::Atom(double value)
+	{
+		instruction_name = std::to_string(value);
+		close_parenthesis = 0;
+		type = AtomType::floating_point;
+	}
+
+	Atom::Atom(bool value)
+	{
+		instruction_name = (value) ? (boolean_true) : (boolean_false);
+		close_parenthesis = 0;
+		type = AtomType::boolean;
+	}
 
 	Atom::Atom(const Atom& other)
 	{
