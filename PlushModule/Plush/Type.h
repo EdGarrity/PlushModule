@@ -11,23 +11,23 @@ namespace Plush
 
 	class Type
 	{
-	//	std::vector<unsigned int> type;
-	//	unsigned _start;
-	//public:
+		std::vector<unsigned int> type;
+		unsigned _start;
+	public:
 
-	//	Type(unsigned int len = 0) : type(len)
-	//	{
-	//		postc();
-	//	}
-	//	Type(unsigned int len, unsigned int which, unsigned int value = 1) : type(len)
-	//	{
-	//		type[which] = value;
-	//		postc();
-	//	}
-	//	Type(const Type& other) : type(other.type), _start(other._start)
-	//	{		
-	//		postc();
-	//	}
+		Type(unsigned int len = 0) : type(len)
+		{
+			postc();
+		}
+		Type(unsigned int len, unsigned int which, unsigned int value = 1) : type(len)
+		{
+			type[which] = value;
+			postc();
+		}
+		Type(const Type& other) : type(other.type), _start(other._start)
+		{		
+			postc();
+		}
 
 	//	typedef std::vector<unsigned int> TypeVec;
 
@@ -59,8 +59,8 @@ namespace Plush
 	//	}
 
 	//	bool operator==(/*const*/ Type &other); // const;
-	//	bool can_pop_from(/*const*/ Environment &env); // const;
-	//	bool can_push_to(/*const*/ Environment &env); // const;
+		bool can_pop_from(/*const*/ Environment &env); // const;
+		bool can_push_to(/*const*/ Environment &env); // const;
 
 	//	unsigned int operator[](unsigned i) const
 	//	{
@@ -89,20 +89,20 @@ namespace Plush
 
 	//	Type make_equal_length(const Type &org);
 
-	//private:
+	private:
 	//	void shorten()
 	//	{
 	//		while (type.size() && type.back() == 0) type.pop_back();
 
 	//		postc();
 	//	}
-	//	void postc()
-	//	{
-	//		for (_start = 0; _start < type.size(); ++_start)
-	//		{
-	//			if (type[_start] > 0) break;
-	//		}
-	//	}
+		void postc()
+		{
+			for (_start = 0; _start < type.size(); ++_start)
+			{
+				if (type[_start] > 0) break;
+			}
+		}
 	};
 
 	//inline Type operator+(const Type &a, const Type &b)

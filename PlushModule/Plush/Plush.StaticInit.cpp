@@ -2,44 +2,45 @@
 #include "Environment.h"
 #include "Plush.Instruction.h"
 //#include "..\Utilities\MyException.h"
+#include "TypeDef.h"
 
 namespace Plush
 {
-	//thread_local StaticInit static_initializer;
+	thread_local StaticInit static_initializer;
 	//StaticInit static_initializer;
 
-	//void initGenerics();
-	////void initBool();
-	////void initExec();
-	////void initFloat();
-	////void initInt();
+	void initGenerics();
+	//void initBool();
+	//void initExec();
+	//void initFloat();
+	//void initInt();
 
-	//Type execType; //(EXEC_STACK+1,EXEC_STACK,1);
-	//Type integerType; //(INTEGER_STACK+1,INTEGER_STACK,1);
-	//Type codeType; //(CODE_STACK+1, CODE_STACK,1);
-	//Type boolType; //(BOOL_STACK+1, BOOL_STACK,1);
-	//Type floatType; //(FLOAT_STACK+1, FLOAT_STACK,1);
-	//Type nullType;
+	Type execType; //(EXEC_STACK+1,EXEC_STACK,1);
+	Type integerType; //(INTEGER_STACK+1,INTEGER_STACK,1);
+	Type codeType; //(CODE_STACK+1, CODE_STACK,1);
+	Type boolType; //(BOOL_STACK+1, BOOL_STACK,1);
+	Type floatType; //(FLOAT_STACK+1, FLOAT_STACK,1);
+	Type nullType;
 
-	//void init_types()
-	//{
-	//	execType = Type(EXEC_STACK + 1, EXEC_STACK, 1);
-	//	integerType = Type(INTEGER_STACK + 1, INTEGER_STACK, 1);
-	//	codeType = Type(CODE_STACK + 1, CODE_STACK, 1);
-	//	boolType = Type(BOOL_STACK + 1, BOOL_STACK, 1);
-	//	floatType = Type(FLOAT_STACK + 1, FLOAT_STACK, 1);
-	//}
+	void init_types()
+	{
+		execType = Type(EXEC_STACK + 1, EXEC_STACK, 1);
+		integerType = Type(INTEGER_STACK + 1, INTEGER_STACK, 1);
+		codeType = Type(CODE_STACK + 1, CODE_STACK, 1);
+		boolType = Type(BOOL_STACK + 1, BOOL_STACK, 1);
+		floatType = Type(FLOAT_STACK + 1, FLOAT_STACK, 1);
+	}
 
-	//StaticInit::StaticInit()
-	//{
-	//	init_types();
+	StaticInit::StaticInit()
+	{
+		init_types();
 
-	//	initGenerics();
-	//	//initBool();
-	//	//initExec();
-	//	//initFloat();
-	//	//initInt();
-	//};
+		initGenerics();
+		//initBool();
+		//initExec();
+		//initFloat();
+		//initInt();
+	};
 
 	//void StaticInit::push_register_pushfunc(Instruction* pInstruction)
 	//{
@@ -104,10 +105,10 @@ namespace Plush
 	//	return Func2CodeMap[function_names[function_index % number_of_functions()]];
 	//}
 
-	//bool StaticInit::is_function_supported(std::string function_name)
-	//{
-	//	return Func2CodeMap.find(function_name) != Func2CodeMap.end();
-	//}
+	bool StaticInit::is_function_supported(std::string function_name)
+	{
+		return Func2CodeMap.find(function_name) != Func2CodeMap.end();
+	}
 
 	//void push_make_instruction(Operator op, std::string type, std::string name, Type in, Type out)
 	//{

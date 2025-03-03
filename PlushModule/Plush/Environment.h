@@ -2,6 +2,8 @@
 #include <map>
 #include <string>
 #include "Genome.h"
+#include "Type.h"
+#include "TypeDef.h"
 
 namespace Plush
 {
@@ -15,10 +17,13 @@ namespace Plush
 		Genome<double> double_stack_;
 		Genome<bool> bool_stack_;
 
+		typedef std::map<std::string, Instruction*> Func2CodeMapType;
+		Func2CodeMapType Func2CodeMap;
+
 	public:
-		Environment()
-		{
-		}
+		//Environment()
+		//{
+		//}
 
 		// Pointer to input & output data
 		size_t record_index;
@@ -54,6 +59,42 @@ namespace Plush
 		{
 		}
 
+		template<typename T>
+		bool assert_length(unsigned long needed)
+		{
+			Genome<T>& stack = get_stack<T>();
+			return stack.size() >= needed;
+		}
+
+		template<>
+		bool assert_length<CodeAtom>(unsigned long needed)
+		{
+			Genome<CodeAtom>& genome = get_stack<CodeAtom>();
+			//return genome.number_of_blocks() >= needed;
+
+			return genome.number_of_blocks_at_least(needed);
+		}
+
+		template<>
+		bool assert_length<ExecAtom>(unsigned long needed)
+		{
+			Genome<ExecAtom>& genome = get_stack<ExecAtom>();
+			//return genome.number_of_blocks() >= needed;
+
+			return genome.number_of_blocks_at_least(needed);
+		}
+
+		Instruction* get_function(std::string function_name)
+		{
+			auto search = Func2CodeMap.find(function_name);
+
+			if (search != Func2CodeMap.end())
+				return Func2CodeMap[function_name];
+
+			else
+				return nullptr;
+		}
+
 		template <typename T> inline Genome<T>& get_stack() {}
 		template <> inline Genome<ExecAtom>& get_stack()
 		{
@@ -84,6 +125,51 @@ namespace Plush
 		template <typename T> inline void clear()
 		{
 			get_stack<T>().clear();
+		}
+
+		/* pushing and popping */
+
+		template <typename T>
+		inline unsigned long push(T value)
+		{
+			get_stack<T>().push(value);
+			return 1;
+		}
+
+		template <typename T>
+		inline T pop()
+		{
+			T val = get_stack<T>().get_top_atom();
+			get_stack<T>().pop();
+			return val;
+		}
+
+		/* Needed for type checking of preconditions */
+		inline bool check_stack_size_at_least(unsigned long which, unsigned long size_needed) //const
+		{
+			switch (which)
+			{
+			case EXEC_STACK: return assert_length<ExecAtom>(size_needed);
+			case INTEGER_STACK: return int_stack_.size() >= size_needed;
+			case CODE_STACK: return assert_length<CodeAtom>(size_needed);
+			case BOOL_STACK: return bool_stack_.size() >= size_needed;
+			case FLOAT_STACK: return double_stack_.size() >= size_needed;
+			}
+			return false;
+		}
+
+		/* Needed for type checking of post conditions */
+		inline unsigned long get_stack_free(unsigned long which) //const
+		{
+			switch (which)
+			{
+			case EXEC_STACK: return exec_stack_.free();
+			case INTEGER_STACK: return int_stack_.free();
+			case CODE_STACK: return code_stack_.free();
+			case BOOL_STACK: return bool_stack_.free();
+			case FLOAT_STACK: return double_stack_.free();
+			}
+			return 0;
 		}
 	};
 }

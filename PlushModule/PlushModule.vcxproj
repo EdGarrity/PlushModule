@@ -135,7 +135,10 @@
     <ClCompile Include="Plush\Atom.cpp" />
     <ClCompile Include="Plush\Environment.cpp" />
     <ClCompile Include="Plush\Genome.cpp" />
+    <ClCompile Include="Plush\Plush.Instruction.cpp" />
+    <ClCompile Include="Plush\Plush.StaticInit.cpp" />
     <ClCompile Include="Plush\Processor.cpp" />
+    <ClCompile Include="Plush\Type.cpp" />
     <ClCompile Include="Utilities\String.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -143,7 +146,11 @@
     <ClInclude Include="Plush\Config.h" />
     <ClInclude Include="Plush\Environment.h" />
     <ClInclude Include="Plush\Genome.h" />
+    <ClInclude Include="Plush\Plush.Instruction.h" />
+    <ClInclude Include="Plush\Plush.StaticInit.h" />
     <ClInclude Include="Plush\Processor.h" />
+    <ClInclude Include="Plush\Type.h" />
+    <ClInclude Include="Plush\TypeDef.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

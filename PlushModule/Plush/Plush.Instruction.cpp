@@ -101,17 +101,17 @@ namespace Plush
 //		return nullType;
 //	}
 //
-//	void initGenerics()
-//	{
-//		//PUSH_GENERIC(YANKDUP, yankdup);
-//		//PUSH_GENERIC(DUP, dup);
-//		//PUSH_GENERIC(=, equals);
-//		//PUSH_GENERIC(FLUSH, flush);
-//		//PUSH_GENERIC(POP, protected_pop);
-//		//PUSH_GENERIC(ROT, rot);
-//		//PUSH_GENERIC(SHOVE, shove);
-//		//PUSH_GENERIC(STACKDEPTH, stackdepth);
-//		//PUSH_GENERIC(SWAP, swap);
-//		//PUSH_GENERIC(YANK, yank);
-//	}
+	void initGenerics()
+	{
+		//PUSH_GENERIC(YANKDUP, yankdup);
+		//PUSH_GENERIC(DUP, dup);
+		//PUSH_GENERIC(=, equals);
+		//PUSH_GENERIC(FLUSH, flush);
+		//PUSH_GENERIC(POP, protected_pop);
+		//PUSH_GENERIC(ROT, rot);
+		//PUSH_GENERIC(SHOVE, shove);
+		//PUSH_GENERIC(STACKDEPTH, stackdepth);
+		//PUSH_GENERIC(SWAP, swap);
+		//PUSH_GENERIC(YANK, yank);
+	}
 }
