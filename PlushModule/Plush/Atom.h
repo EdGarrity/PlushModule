@@ -37,6 +37,8 @@ namespace Plush
 		explicit Atom(std::string_view instruction_name, unsigned int close_parenthesis, AtomType type);
 		explicit Atom(std::string_view _program_statement);
 		explicit Atom(long value);
+		explicit Atom(double value);
+		explicit Atom(bool value);
 		explicit Atom(const Atom& other);
 		explicit Atom(const Atom* other);
 

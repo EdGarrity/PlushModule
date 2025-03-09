@@ -8,9 +8,9 @@
 
 namespace Plush
 {
-	class Instruction;
+	//class Instruction;
 
-	typedef unsigned(*Operator)(Environment& env);
+	//typedef unsigned(*Operator)(Environment& env);
 
 	class StaticInit
 	{
@@ -26,26 +26,27 @@ namespace Plush
 	public:
 		StaticInit();
 
-		// Registers a function and makes it globally available through the 'instructions' Code 
-		void push_register_pushfunc(Instruction* pInstruction);
-		void set_parentheses(std::string type, std::string name, unsigned int block_wants);
+		//// Registers a function and makes it globally available through the 'instructions' Code 
+		//void push_register_pushfunc(Instruction* pInstruction);
+		//void set_parentheses(std::string type, std::string name, unsigned int block_wants);
 
-		// Helper functions
-		unsigned long number_of_functions();
-		std::string get_function_name(unsigned long function_index);
-		unsigned long get_function_index(std::string function_name);
-		unsigned int get_function_block_wants(std::string function_name);
-		Instruction* get_function(std::string function_name);
-		Instruction* get_function(unsigned long function_index);
+		//// Helper functions
+		//unsigned long number_of_functions();
+		//std::string get_function_name(unsigned long function_index);
+		//unsigned long get_function_index(std::string function_name);
+		//unsigned int get_function_block_wants(std::string function_name);
+		//Instruction* get_function(std::string function_name);
+		//Instruction* get_function(unsigned long function_index);
 		bool is_function_supported(std::string function_name);
 	};
 
 	extern thread_local StaticInit static_initializer;
+	//extern StaticInit static_initializer;
 
-	inline void set_parentheses(std::string type, std::string name, unsigned int block_wants)
-	{
-		static_initializer.set_parentheses(type, name, block_wants);
-	}
+	//inline void set_parentheses(std::string type, std::string name, unsigned int block_wants)
+	//{
+	//	static_initializer.set_parentheses(type, name, block_wants);
+	//}
 
-	void push_make_instruction(Operator op, std::string type, std::string name, Type in, Type out);
+	//void push_make_instruction(Operator op, std::string type, std::string name, Type in, Type out);
 }

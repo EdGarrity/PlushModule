@@ -27,19 +27,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Utilities\String.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Plush\Environment.cpp">
+      <Filter>Source Files\Plush</Filter>
+    </ClCompile>
+    <ClCompile Include="Plush\Processor.cpp">
+      <Filter>Source Files\Plush</Filter>
+    </ClCompile>
     <ClCompile Include="PlushModule.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Plush\Atom.cpp">
       <Filter>Source Files\Plush</Filter>
     </ClCompile>
-    <ClCompile Include="Plush\Processor.h.cpp">
+    <ClCompile Include="Plush\Genome.cpp">
       <Filter>Source Files\Plush</Filter>
     </ClCompile>
-    <ClCompile Include="Utilities\String.cpp">
-      <Filter>Source Files\Utilities</Filter>
-    </ClCompile>
-    <ClCompile Include="Plush\Genome.cpp">
+    <ClCompile Include="Plush\Plush.StaticInit.cpp">
       <Filter>Source Files\Plush</Filter>
     </ClCompile>
     <ClCompile Include="Plush\Type.cpp">
@@ -48,45 +54,33 @@
     <ClCompile Include="Plush\Plush.Instruction.cpp">
       <Filter>Source Files\Plush</Filter>
     </ClCompile>
-    <ClCompile Include="Plush\Plush.StaticInit.cpp">
-      <Filter>Source Files\Plush</Filter>
-    </ClCompile>
-    <ClCompile Include="Plush\Environment.cpp">
-      <Filter>Source Files\Plush</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Plush\Environment.h">
+      <Filter>Header Files\Plush</Filter>
+    </ClInclude>
+    <ClInclude Include="Plush\Processor.h">
+      <Filter>Header Files\Plush</Filter>
+    </ClInclude>
     <ClInclude Include="Plush\Atom.h">
       <Filter>Header Files\Plush</Filter>
     </ClInclude>
     <ClInclude Include="Plush\Config.h">
       <Filter>Header Files\Plush</Filter>
     </ClInclude>
-    <ClInclude Include="Plush\Environment.h">
-      <Filter>Header Files\Plush</Filter>
-    </ClInclude>
     <ClInclude Include="Plush\Genome.h">
-      <Filter>Header Files\Plush</Filter>
-    </ClInclude>
-    <ClInclude Include="Plush\Processor.h">
-      <Filter>Header Files\Plush</Filter>
-    </ClInclude>
-    <ClInclude Include="Utilities\FixedSizeStack.h">
-      <Filter>Header Files\Utilieies</Filter>
-    </ClInclude>
-    <ClInclude Include="Utilities\String.h">
-      <Filter>Header Files\Utilieies</Filter>
-    </ClInclude>
-    <ClInclude Include="Plush\Type.h">
-      <Filter>Header Files\Plush</Filter>
-    </ClInclude>
-    <ClInclude Include="Plush\Plush.Instruction.h">
       <Filter>Header Files\Plush</Filter>
     </ClInclude>
     <ClInclude Include="Plush\Plush.StaticInit.h">
       <Filter>Header Files\Plush</Filter>
     </ClInclude>
+    <ClInclude Include="Plush\Type.h">
+      <Filter>Header Files\Plush</Filter>
+    </ClInclude>
     <ClInclude Include="Plush\TypeDef.h">
+      <Filter>Header Files\Plush</Filter>
+    </ClInclude>
+    <ClInclude Include="Plush\Plush.Instruction.h">
       <Filter>Header Files\Plush</Filter>
     </ClInclude>
   </ItemGroup>

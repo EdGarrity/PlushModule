@@ -16,7 +16,7 @@ namespace Plush
 		Type outtype_;
 
 	public:
-		Instruction(Operator op, std::string name, Type intype, Type outtype) : op_(op), name_(name), intype_(intype), outtype_(outtype) {}
+	//	Instruction(Operator op, std::string name, Type intype, Type outtype) : op_(op), name_(name), intype_(intype), outtype_(outtype) {}
 
 		virtual bool can_run(/*const*/ Environment& env) /*const*/ 
 		{ 
