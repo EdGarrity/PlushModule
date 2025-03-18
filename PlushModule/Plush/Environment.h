@@ -26,7 +26,7 @@ namespace Plush
 		//}
 
 		// Pointer to input & output data
-		size_t record_index;
+		size_t record_index = 0;
 		std::vector<double> output;
 
 		std::array<std::string, Config::maximum_stack_size> temp_genes;

@@ -8,14 +8,14 @@ namespace PlushUnitTest
 		if (env.get_stack<S1>().size() != s2.size())
 			return false;
 
-		//if (!s2.empty())
-		//{
-		//	for (size_t n = 0; n < s2.size(); n++)
-		//	{
-		//		if (s2[n] != env.get_stack<S1>().get_atom_at_index(n))
-		//			return false;
-		//	}
-		//}
+		if (!s2.empty())
+		{
+			for (size_t n = 0; n < s2.size(); n++)
+			{
+				if (s2[n] != env.get_stack<S1>().get_atom_at_index(n))
+					return false;
+			}
+		}
 
 		return true;
 	}
@@ -39,14 +39,4 @@ namespace PlushUnitTest
 		else
 			return false;
 	}
-
-	//bool is_stack_state(Environment & env,
-	//	const std::vector<bool>& bool_array)
-	//{
-	//	if (match<bool>(env, bool_array)			)
-	//		return true;
-
-	//	else
-	//		return false;
-	//}
 }
