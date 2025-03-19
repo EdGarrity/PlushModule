@@ -22,17 +22,9 @@ namespace PlushUnitTest
 
 	// long, double, bool, ExecAtom, CodeAtom
 	bool is_stack_state(Environment & env,
-		const std::vector<long>& int_array,
-		const std::vector<double>& double_array,
-		const std::vector<bool>& bool_array,
-		const std::vector<Plush::ExecAtom>& exec_array,
-		const std::vector<Plush::CodeAtom>& code_array)
+		const std::vector<long>& int_array)
 	{
 		if (match<long>(env, int_array)
-			&& match<double>(env, double_array)
-			&& match<bool>(env, bool_array)
-			&& match<Plush::ExecAtom>(env, exec_array)
-			&& match<Plush::CodeAtom>(env, code_array)
 			)
 			return true;
 

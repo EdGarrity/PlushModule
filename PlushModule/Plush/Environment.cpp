@@ -3,4 +3,5 @@
 
 namespace Plush
 {
+	std::vector<double> null_input;
 }
