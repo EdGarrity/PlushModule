@@ -9,7 +9,7 @@ namespace Plush
 	{
 	public:
 		unsigned int run(Environment& env, std::string program);
-		unsigned int run(Environment& env, std::string program, std::vector<double>& input);
+		unsigned int run(Environment& env);
 
 	};
 }
