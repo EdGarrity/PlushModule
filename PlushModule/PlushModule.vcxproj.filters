@@ -42,6 +42,9 @@
     <ClCompile Include="Plush\Processor.cpp">
       <Filter>Source Files\Plush</Filter>
     </ClCompile>
+    <ClCompile Include="Utilities\String.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Plush\Environment.h">
@@ -61,6 +64,9 @@
     </ClInclude>
     <ClInclude Include="Plush\Processor.h">
       <Filter>Header Files\Plush</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\String.h">
+      <Filter>Header Files\Utilieies</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
